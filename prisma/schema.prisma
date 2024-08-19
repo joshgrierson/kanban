@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Board {
+  id Int @id @default(autoincrement())
+  title String @unique
+  maxSwimlanes Int
+  status Status[] @relation("Board")
+  task Task[] @relation("Board")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Task {
+  id Int @id @default(autoincrement())
+  title String
+  content String
+  task Task[] @relation("Subtask")
+  parentTask Task? @relation("Subtask", fields: [parentTaskId], references: [id])
+  parentTaskId Int?
+  status Status @relation("Status", fields: [statusId], references: [id])
+  statusId Int
+  board Board @relation("Board", fields: [boardId], references: [id])
+  boardId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Status {
+  id Int @id @default(autoincrement())
+  title String
+  board Board @relation("Board", fields: [boardId], references: [id])
+  boardId Int
+  task Task[] @relation("Status")
+  swimlane Swimlane[] @relation("Status")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Swimlane {
+  id Int @id @default(autoincrement())
+  maxTasks Int?
+  status Status @relation("Status", fields: [statusId], references: [id])
+  statusId Int @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
