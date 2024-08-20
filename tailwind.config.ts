@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+import { buttonBorderRadius, buttonColor, buttonFontSize, buttonSpacing } from "./tokens/button";
+import { sharedColorTokens } from "./tokens";
+import { cardBorderRadius, cardColor, cardFontSize, cardSpacing } from "./tokens/card";
 
 const config: Config = {
   content: [
@@ -8,10 +11,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        ...sharedColorTokens,
+        button: buttonColor,
+        card: cardColor,
+      },
+      spacing: {
+        ...buttonSpacing,
+        ...cardSpacing,
+      },
+      borderRadius: {
+        ...buttonBorderRadius,
+        ...cardBorderRadius,
+      },
+      fontSize: {
+        ...buttonFontSize,
+        ...cardFontSize,
       },
     },
   },

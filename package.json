@@ -8,23 +8,41 @@
     "start": "next start",
     "lint": "next lint",
     "studio": "prisma studio",
-    "seed": "esbuild scripts/seed.ts --bundle --platform=node --outdir=dist && node dist/seed.js"
+    "seed": "esbuild scripts/seed.ts --bundle --platform=node --outdir=dist && node dist/seed.js",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@prisma/client": "^5.18.0",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/nextjs": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/test": "^8.2.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "esbuild": "^0.23.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8",
     "prisma": "^5.18.0",
+    "storybook": "^8.2.9",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
