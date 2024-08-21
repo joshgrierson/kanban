@@ -13,6 +13,10 @@ export const semanticColorTokens = {
     DEFAULT: defaultColors.gray[400],
     dark: defaultColors.gray[400],
   },
+  quarternary: {
+    DEFAULT: defaultColors.gray[900],
+    dark: defaultColors.gray[900],
+  },
   onPrimary: {
     DEFAULT: defaultColors.white,
     dark: defaultColors.white,

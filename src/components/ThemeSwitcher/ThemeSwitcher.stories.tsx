@@ -10,4 +10,10 @@ type Story = StoryObj<typeof ThemeSwitcher>;
 
 export const Default: Story = {};
 
+export const DarkMode: Story = {
+  args: {
+    darkModeOn: true,
+  },
+};
+
 export default meta;
