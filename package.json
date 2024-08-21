@@ -10,7 +10,8 @@
     "studio": "prisma studio",
     "seed": "esbuild scripts/seed.ts --bundle --platform=node --outdir=dist && node dist/seed.js",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "gen": "esbuild scripts/create-from-template.ts --bundle --platform=node --outdir=dist && node dist/create-from-template.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",

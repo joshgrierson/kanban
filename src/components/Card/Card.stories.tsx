@@ -15,4 +15,12 @@ export const Default: Story = {
   },
 };
 
+export const Clickable: Story = {
+  args: {
+    title: "This is a card title",
+    text: "text content",
+    onClick: () => {},
+  },
+};
+
 export default meta;
