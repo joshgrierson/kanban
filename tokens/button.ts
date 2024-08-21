@@ -1,6 +1,6 @@
 import { semanticColorTokens } from "./semantic";
 
-export const buttonColor = {
+export const buttonColors = {
   bg: {
     DEFAULT: semanticColorTokens.primary.DEFAULT,
     dark: semanticColorTokens.primary.dark,

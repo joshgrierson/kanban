@@ -1,8 +1,5 @@
 import type { Config } from "tailwindcss";
-import { buttonBorderRadius, buttonColor, buttonFontSize, buttonSpacing } from "./tokens/button";
-import { sharedColorTokens } from "./tokens";
-import { cardBorderRadius, cardColor, cardFontSize, cardSpacing } from "./tokens/card";
-import { navBarBorderRadius, navBarColor } from "./tokens/navbar";
+import { getTokens } from "./tokens";
 
 const config: Config = {
   content: [
@@ -12,25 +9,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        ...sharedColorTokens,
-        button: buttonColor,
-        card: cardColor,
-        navbar: navBarColor,
-      },
-      spacing: {
-        ...buttonSpacing,
-        ...cardSpacing,
-      },
-      borderRadius: {
-        ...buttonBorderRadius,
-        ...cardBorderRadius,
-        ...navBarBorderRadius,
-      },
-      fontSize: {
-        ...buttonFontSize,
-        ...cardFontSize,
-      },
+      ...getTokens(),
     },
   },
   plugins: [],

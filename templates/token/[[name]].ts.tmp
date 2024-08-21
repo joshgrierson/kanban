@@ -1,0 +1,7 @@
+import { semanticColorTokens } from "./semantic";
+
+export const [[name]]Colors = {};
+
+export const [[name]]BorderRadius = {};
+
+export const [[name]]FontSize = {};

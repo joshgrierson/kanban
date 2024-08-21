@@ -31,6 +31,29 @@ export const Default: Story = {
   },
 };
 
+export const WithHeading: Story = {
+  args: {
+    heading: "Nav Heading",
+    items: [
+      {
+        title: "Nav item one",
+        link: "/",
+        icon: faLink,
+      },
+      {
+        title: "Nav item two",
+        link: "/",
+        icon: faLink,
+      },
+      {
+        title: "Nav item three",
+        link: "/",
+        icon: faLink,
+      },
+    ],
+  },
+};
+
 export const ActiveLink: Story = {
   args: {
     items: [

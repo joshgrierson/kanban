@@ -1,6 +1,6 @@
 import { semanticColorTokens } from "./semantic";
 
-export const cardColor = {
+export const cardColors = {
   bg: {
     DEFAULT: semanticColorTokens.secondary.DEFAULT,
     dark: semanticColorTokens.secondary.dark,

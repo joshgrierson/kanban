@@ -4,6 +4,8 @@ import Link from "next/link";
 import { FC } from "react";
 
 type Props = {
+  heading?: string;
+  onClick?: (itemIndex?: number) => void;
   items: {
     title: string;
     link: string;
@@ -13,9 +15,18 @@ type Props = {
   }[];
 };
 
-export const NavBar: FC<Props> = ({ items }) => {
+export const NavBar: FC<Props> = ({ heading, items, onClick }) => {
+  const onItemClick: Props["onClick"] = (itemIndex) => {
+    if (onClick) {
+      onClick(itemIndex);
+    }
+  };
+
   return (
-    <nav className="min-w-[230px]">
+    <nav className="min-w-[230px] text-navbar">
+      {heading && (
+        <h5 className="pl-6 my-3 text-navbar-item-text uppercase font-semibold">{heading}</h5>
+      )}
       <ul>
         {items.map(({ title, link, icon, active, invert }, index) => {
           const _class = [
@@ -26,7 +37,7 @@ export const NavBar: FC<Props> = ({ items }) => {
             active ? "bg-navbar-item-active-bg text-navbar-item-text-active" : "",
           ].join(" ");
           return (
-            <li key={`${title}_${index}`}>
+            <li key={`${title}_${index}`} onClick={() => onItemClick(index)}>
               <Link href={link} className={_class}>
                 {icon && <FontAwesomeIcon icon={icon} className="mr-2" />}
                 {title}

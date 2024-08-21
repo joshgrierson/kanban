@@ -1,6 +1,6 @@
 import { semanticColorTokens } from "./semantic";
 
-export const navBarColor = {
+export const navBarColors = {
   "item-active-bg": {
     DEFAULT: semanticColorTokens.primary.DEFAULT,
     dark: semanticColorTokens.primary.dark,
@@ -29,4 +29,8 @@ export const navBarColor = {
 
 export const navBarBorderRadius = {
   "navbar-item": "2rem",
+};
+
+export const navBarFontSize = {
+  navbar: "0.9rem",
 };
