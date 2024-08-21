@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import { buttonBorderRadius, buttonColor, buttonFontSize, buttonSpacing } from "./tokens/button";
 import { sharedColorTokens } from "./tokens";
 import { cardBorderRadius, cardColor, cardFontSize, cardSpacing } from "./tokens/card";
-import { navBarColor } from "./tokens/navbar";
+import { navBarBorderRadius, navBarColor } from "./tokens/navbar";
 
 const config: Config = {
   content: [
@@ -25,6 +25,7 @@ const config: Config = {
       borderRadius: {
         ...buttonBorderRadius,
         ...cardBorderRadius,
+        ...navBarBorderRadius,
       },
       fontSize: {
         ...buttonFontSize,

@@ -2,8 +2,8 @@ import defaultColors from "tailwindcss/colors";
 
 export const semanticColorTokens = {
   primary: {
-    DEFAULT: defaultColors.violet[700],
-    dark: defaultColors.violet[700],
+    DEFAULT: defaultColors.violet[500],
+    dark: defaultColors.violet[500],
   },
   secondary: {
     DEFAULT: defaultColors.gray[700],
