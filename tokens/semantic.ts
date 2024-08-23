@@ -10,12 +10,12 @@ export const semanticColorTokens = {
     dark: defaultColors.gray[700],
   },
   tertiary: {
-    DEFAULT: defaultColors.gray[400],
-    dark: defaultColors.gray[400],
+    DEFAULT: defaultColors.gray[500],
+    dark: defaultColors.gray[500],
   },
   quarternary: {
-    DEFAULT: defaultColors.gray[900],
-    dark: defaultColors.gray[900],
+    DEFAULT: defaultColors.gray[800],
+    dark: defaultColors.gray[800],
   },
   onPrimary: {
     DEFAULT: defaultColors.white,
@@ -26,8 +26,8 @@ export const semanticColorTokens = {
     dark: defaultColors.white,
   },
   "primary-hover": {
-    DEFAULT: defaultColors.violet[900],
-    dark: defaultColors.violet[900],
+    DEFAULT: defaultColors.violet[700],
+    dark: defaultColors.violet[700],
   },
   "onPrimary-hover": {
     DEFAULT: defaultColors.gray[200],

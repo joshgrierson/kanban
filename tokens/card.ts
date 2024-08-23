@@ -25,5 +25,5 @@ export const cardSpacing = {
 };
 
 export const cardBorderRadius = {
-  card: "0.8rem",
+  card: "0.6rem",
 };

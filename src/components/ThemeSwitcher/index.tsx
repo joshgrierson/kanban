@@ -1,9 +1,10 @@
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ChangeEventHandler, FC, useState } from "react";
+import { ChangeEventHandler, FC } from "react";
 
 type Props = {
   darkModeOn?: boolean;
+  onToggle: (darkModeOn: boolean) => void;
 };
 
 type ToggleProps = {
@@ -29,13 +30,11 @@ const Toggle: FC<ToggleProps> = ({ value, onChange }) => {
   );
 };
 
-export const ThemeSwitcher: FC<Props> = ({ darkModeOn }) => {
-  const onToggleChange: ToggleProps["onChange"] = (state) => {};
-
+export const ThemeSwitcher: FC<Props> = ({ darkModeOn, onToggle }) => {
   return (
     <div className="flex p-3 bg-themeSwitcher-bg rounded-themeSwitcher">
       <FontAwesomeIcon icon={faSun} className="text-themeSwitcher-icon text-[1.3rem]" />
-      <Toggle value={darkModeOn} onChange={onToggleChange} />
+      <Toggle value={darkModeOn} onChange={onToggle} />
       <FontAwesomeIcon icon={faMoon} className="text-themeSwitcher-icon text-[1.3rem]" />
     </div>
   );

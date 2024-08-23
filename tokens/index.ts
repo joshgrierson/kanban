@@ -3,6 +3,7 @@ import * as buttonTokens from "./button";
 import * as navbarTokens from "./navbar";
 import * as cardTokens from "./card";
 import * as themeSwitcherTokens from "./themeSwitcher";
+import * as headingTokens from "./heading";
 import { ThemeConfig } from "tailwindcss/types/config";
 
 const matchableTokenTypes = ["Colors", "FontSize", "Spacing", "BorderRadius"] as const;
@@ -12,6 +13,7 @@ const bootstrap: Record<string, any> = {
   navbar: navbarTokens,
   card: cardTokens,
   themeSwitcher: themeSwitcherTokens,
+  heading: headingTokens,
 };
 
 export function getTokens() {

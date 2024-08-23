@@ -33,7 +33,7 @@ export const buttonFontSize = {
 };
 
 export const buttonSpacing = {
-  button: "0.8rem",
+  button: "0.7rem",
   "button-sm": "0.6rem",
 };
 
