@@ -24,7 +24,7 @@ export const SidebarCollapsable: FC<PropsWithChildren> = ({ children }) => {
         icon={expandIcon}
         onClick={onToggleExpand}
       />
-      {children}
+      <div className={expanded ? undefined : "w-0 overflow-hidden"}>{children}</div>
     </div>
   );
 };

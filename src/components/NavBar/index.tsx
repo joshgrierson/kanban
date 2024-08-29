@@ -1,9 +1,11 @@
+"use client";
+
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { FC } from "react";
 
-type Props = {
+export type Props = {
   heading?: string;
   onClick?: (itemIndex?: number) => void;
   items: {
@@ -23,11 +25,13 @@ export const NavBar: FC<Props> = ({ heading, items, onClick }) => {
   };
 
   return (
-    <nav className="min-w-[230px] text-navbar">
+    <nav className="min-w-[230px] font-normal">
       {heading && (
-        <h5 className="pl-6 my-3 text-navbar-item-text uppercase font-semibold">{heading}</h5>
+        <h5 className="pl-6 my-3 text-navbar-item-text uppercase font-semibold text-navbar-heading">
+          {heading}
+        </h5>
       )}
-      <ul>
+      <ul className="text-navbar-items">
         {items.map(({ title, link, icon, active, invert }, index) => {
           const _class = [
             "block py-3 pl-6 rounded-r-navbar-item",

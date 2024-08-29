@@ -10,16 +10,18 @@ export function withCursorPagination<T>(
   return {
     take: pageSize,
     skip: cursor ? 1 : 0,
-    cursor: {
-      id: cursor,
-    },
+    ...(cursor
+      ? {
+          id: cursor,
+        }
+      : {}),
     ...query,
   } as T;
 }
 
-export async function query<T>(promisableQuery: Promise<T>) {
+export async function query<T>(queryFn: () => Promise<T>) {
   try {
-    const result = await promisableQuery;
+    const result = await queryFn();
     return result;
   } catch (error) {
     logger.error(error as DBError);

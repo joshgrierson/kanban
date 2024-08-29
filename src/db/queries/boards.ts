@@ -3,7 +3,7 @@ import { dbClient } from "@db/dbClient";
 import { withCursorPagination } from "@db/utils";
 import DBError from "@db/error";
 
-export async function getAllBoards({ cursor }: { cursor?: number }) {
+export async function getAllBoards({ cursor }: { cursor?: number } = {}) {
   return dbClient.board
     .findMany(
       withCursorPagination<Prisma.BoardFindManyArgs>(
@@ -15,5 +15,7 @@ export async function getAllBoards({ cursor }: { cursor?: number }) {
         cursor,
       ),
     )
-    .catch((error) => new DBError(error, "QueryAllBoards"));
+    .catch((error) => {
+      throw new DBError(error, "QueryAllBoards");
+    });
 }

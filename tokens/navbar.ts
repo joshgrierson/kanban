@@ -32,5 +32,6 @@ export const navBarBorderRadius = {
 };
 
 export const navBarFontSize = {
-  navbar: "0.9rem",
+  "navbar-heading": "0.9rem",
+  "navbar-items": "1.1rem",
 };
