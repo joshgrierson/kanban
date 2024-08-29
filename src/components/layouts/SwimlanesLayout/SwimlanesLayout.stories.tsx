@@ -1,3 +1,4 @@
+import defaultColors from "tailwindcss/colors";
 import { Meta, StoryObj } from "@storybook/react";
 import { SwimlanesLayout } from "./";
 import { Card, Props as CardProps } from "../../Card";
@@ -45,7 +46,9 @@ export const Default: Story = {
     return (
       <SwimlanesLayout.Layout className="p-3">
         <SwimlanesLayout.Swimlane>
-          <SwimlanesLayout.SwimlaneHeader>Todo</SwimlanesLayout.SwimlaneHeader>
+          <SwimlanesLayout.SwimlaneHeader color={defaultColors.gray[400]}>
+            Todo
+          </SwimlanesLayout.SwimlaneHeader>
           <SwimlanesLayout.SwimlaneContent>
             {SwimlaneCardsCol1.map((card, index) => (
               <Card
@@ -58,7 +61,9 @@ export const Default: Story = {
           </SwimlanesLayout.SwimlaneContent>
         </SwimlanesLayout.Swimlane>
         <SwimlanesLayout.Swimlane>
-          <SwimlanesLayout.SwimlaneHeader>In Progress</SwimlanesLayout.SwimlaneHeader>
+          <SwimlanesLayout.SwimlaneHeader color={defaultColors.blue[400]}>
+            In Progress
+          </SwimlanesLayout.SwimlaneHeader>
           <SwimlanesLayout.SwimlaneContent>
             {SwimlaneCardsCol2.map((card, index) => (
               <Card

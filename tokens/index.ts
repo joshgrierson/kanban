@@ -4,9 +4,16 @@ import * as navbarTokens from "./navbar";
 import * as cardTokens from "./card";
 import * as themeSwitcherTokens from "./themeSwitcher";
 import * as headingTokens from "./heading";
+import * as modalTokens from "./modal";
 import { ThemeConfig } from "tailwindcss/types/config";
 
-const matchableTokenTypes = ["Colors", "FontSize", "Spacing", "BorderRadius"] as const;
+const matchableTokenTypes = [
+  "Colors",
+  "FontSize",
+  "Spacing",
+  "LetterSpacing",
+  "BorderRadius",
+] as const;
 
 const bootstrap: Record<string, any> = {
   button: buttonTokens,
@@ -14,6 +21,7 @@ const bootstrap: Record<string, any> = {
   card: cardTokens,
   themeSwitcher: themeSwitcherTokens,
   heading: headingTokens,
+  modal: modalTokens,
 };
 
 export function getTokens() {
@@ -39,6 +47,7 @@ export function getTokens() {
             config[downcaseFirstLetter][key] = values;
             break;
           case "FontSize":
+          case "LetterSpacing":
           case "BorderRadius":
           case "Spacing":
             config[downcaseFirstLetter] = {
